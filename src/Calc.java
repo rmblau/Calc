@@ -4,7 +4,7 @@
  * @author karan
  */
 public class Calc extends javax.swing.JFrame {
-    
+
     /*
     * Programmer Defined Variables
     */
@@ -18,7 +18,7 @@ public class Calc extends javax.swing.JFrame {
     int minusClick;
     int multiplyClick;
     int divideClick;
-    
+
     /**
      * Creates new form Calc
      */
@@ -386,6 +386,12 @@ public class Calc extends javax.swing.JFrame {
 
     private void btn_equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equalsActionPerformed
         secondDouble = (Double.parseDouble(String.valueOf(mDisplay.getText())));
+        if(secondDouble == 0){
+            JOptionPane.showMessageDialog(null, "illegal division by zero");
+            clearText();
+            throw new ArithmeticException("division by zero");
+
+        }
         if(plusClick > 0) {
             totalDouble = firstDouble + secondDouble;
             mDisplay.setText(String.valueOf(totalDouble));
@@ -447,7 +453,7 @@ public class Calc extends javax.swing.JFrame {
             // Do Nothing.
         }
     }
-*/ 
+*/
     /**
      * @param args the command line arguments
      */
@@ -455,7 +461,7 @@ public class Calc extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
